@@ -1,0 +1,4 @@
+models/
+secret.py
+ChatBot/
+__pycache__/

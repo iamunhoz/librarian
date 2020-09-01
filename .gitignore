@@ -2,3 +2,4 @@ models/
 secret.py
 ChatBot/
 __pycache__/
+dumpedWords/

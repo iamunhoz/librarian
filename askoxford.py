@@ -1,11 +1,9 @@
 # -*- coding: latin-1 -*-
-#TODO: aprender a carregar um arquivo json
-#TODO: aprender a tirar o subvalor do subvalor de uma chave json
 
 import requests
 import json
 import os
-import secret
+import secret #passcodes colocados num arquivo separado para não subir com git
 
 class lexicon:
     def __init__(self, word_id):
@@ -33,13 +31,13 @@ class lexicon:
         self.pronunciation = self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['pronunciations'][0]['audioFile']
         self.type = self.jsonstr['results'][0]['type']
         self.ipa = self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['pronunciations'][0]['phoneticSpelling']
-        self.grammarclass = ''
+        self.grammarclass = self.jsonstr['results'][0]['lexicalEntries'][0]['lexicalCategory']['text']
         self.synonyms = []
         for i in self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['synonyms']:
             self.synonyms.append(i['text'])
-        self.definitions = []
-        self.etymology = ''
-        self.derivatives = []
+        self.definitions = self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions']
+        self.etymology = self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['etymologies']
+        #self.derivatives = self.jsonstr['results'][0]['lexicalEntries'][0]['derivatives'][0]['text'] não existe para todos
     
     # methods
     def speak(self): 

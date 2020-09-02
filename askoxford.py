@@ -41,7 +41,5 @@ class lexicon:
     
     # methods
     def speak(self): 
-        os.system('mplayer ' + self.pronunciation) #deu certo. Futuramente implementar uma forma mais rapida #TODO
+        os.system('mplayer -really-quiet ' + self.pronunciation) #deu certo. Futuramente implementar uma forma mais rapida #TODO
 
-        #for i in self.jsonstr['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['synonyms']:
-        #    self.synonyms.append(i['text'])

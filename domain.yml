@@ -3,23 +3,22 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
+  - word_detail
+
+entities:
+  - word
+  - word_detail
+
+  slots:
+  - word:
+    type: text
+  - word_detail:
+    type: text
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"
@@ -27,6 +26,14 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+actions:
+- utter_goodbye
+- utter_greet
+- utter_happy
+- action_word_detail
+- utter_ask_location
+- utter_how_can_i_help
+
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false

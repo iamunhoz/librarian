@@ -1,3 +1,10 @@
+## intent: word_detail
+- What is the [meaning](word_detail) of [love](word)
+- How is the [pronunciation](word_detail) of [iron](word)
+- What [part of speech](word_detail) is [congress](word)
+- what is the [origin](word_detail) of [cherry](word)
+- What is the [sound](word_detail) of [fiery](word)
+
 ## intent:greet
 - hey
 - hello
@@ -26,28 +33,6 @@
 - don't like that
 - no way
 - not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
 
 ## intent:bot_challenge
 - are you a bot?

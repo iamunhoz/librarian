@@ -5,7 +5,7 @@ import json
 import os
 import secret #passcodes colocados num arquivo separado para não subir com git
 
-class lexicon:
+class from_oxford:
     def __init__(self, word_id):
         #dados de acesso fornecidos pela propria Oxford
         app_key = secret.SECRET_KEY # talvez eu precise mudar em que momento isso é atribuido
@@ -42,4 +42,14 @@ class lexicon:
     # methods
     def speak(self): 
         os.system('mplayer -really-quiet ' + self.pronunciation) #deu certo. Futuramente implementar uma forma mais rapida #TODO
+
+def consulta(word, info):
+    palavra = from_oxford(word)
+
+    if info == 'pronunciation':
+        return palavra.pronunciation
+    if info == 'synonyms':
+        return palavra.synonyms
+    if info == 'type':
+        return palavra.type
 
